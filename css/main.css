@@ -1,3 +1,202 @@
+/* GENERAL RULES */
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Roboto';
 }
+
+img {
+  max-width: 100%;
+}
+
+.svg {
+  width: 100px;
+  height: 100px;
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  
+  text-align: center;
+  
+  max-width: 400px; /* mobile size imitation */
+  margin: 0 auto;
+  
+  min-height: calc(100vh - 88px); /* sticky footer */
+}
+
+/* COMMON RULES */
+
+.arrow {
+  position: absolute;
+  width: 40px;
+  border-radius: 60%;
+  background-color: rgba(0,0,0,.5);
+  padding: 10px;
+  cursor: pointer;
+}
+
+
+/* index.html */
+
+/* HEADER */
+
+#header {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-self: center; /*?*/
+  
+  padding-top: 15px
+}
+
+.logo-txt {
+  margin-top: -10px;
+  font-size: 0.8em;
+  font-weight: 500;
+}
+
+.logo-img,
+.logo-txt {
+  align-self: center; /*?*/
+}
+
+.phone {
+  display: flex;
+  flex-direction: column;
+  align-self: center; /*?*/
+  
+  font-size: 1.3em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-top: -20px
+}
+
+.phone-time {
+  display: none;
+}
+
+.phone-number,
+.phone-time {
+  align-self: center;
+}
+
+#fixed-top {
+  display: none; /* none/flex on js script */
+  justify-content:space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+ 
+  width: 100%;
+  height: 50px;
+  background: #fff;
+}
+
+#fixed-top img {
+  width: 40px;
+}
+
+
+/* MAIN OFFER */
+
+#main-offer {
+  display: flex;
+  flex-direction: column;
+}
+
+.video {
+  order: -1;
+  padding: 0 40px;
+}
+
+.order-form {
+  display: flex;
+  flex-direction: column;
+  
+  padding: 0 30px;
+}
+
+/*  ADVANTAGES */
+
+#advantages ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#advantages li {
+  background-image: url('../img/ico-done.svg');
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: 20% center;
+}
+
+
+/* GALLERY */
+
+#gallery-slider {
+  position: relative;
+}
+
+#gallery-arr-left {
+  top: calc(50% - 35px);
+  left: 2%;
+}
+
+#gallery-arr-right {
+  top: calc(50% - 35px);
+  right: 2%;
+}
+
+#gallery-img {
+  display: block
+}
+
+#gallery-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  margin: 0;
+  padding: 12px;
+  background-color: rgba(0,0,0,.5);
+  color: #fff;
+}
+
+
+/* CALL-BACK */
+
+/* CLIENTS */
+
+#clients-img {
+  border-radius: 50%;
+  width: 150px
+}
+
+/* ABOUT */
+
+/* QUESTIONS */
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+
+}
+
+
+
+
+
+
+
+
