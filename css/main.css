@@ -28,13 +28,20 @@ img {
   
   text-align: center;
   
-  max-width: 400px; /* mobile size imitation */
+  max-width: 1000px; /* mobile size imitation */
   margin: 0 auto;
   
   min-height: calc(100vh - 88px); /* sticky footer */
 }
 
 /* COMMON RULES */
+
+#advantages,
+#call-back,
+#about,
+#questions {
+  padding: 0 10px;
+}
 
 .arrow {
   position: absolute;
@@ -46,7 +53,6 @@ img {
 }
 
 
-/* index.html */
 
 /* HEADER */
 
@@ -127,6 +133,10 @@ img {
 /*  padding: 0 40px;*/
 }
 
+.offer-txt {
+  text-transform: uppercase;
+}
+
 .order-form {
   display: flex;
   flex-direction: column;
@@ -145,7 +155,8 @@ img {
   background-image: url('../img/ico-done.svg');
   background-repeat: no-repeat;
   background-size: 20px 20px;
-  background-position: 20% center;
+  background-position: 0 top;
+  padding-left: 30px;
 }
 
 

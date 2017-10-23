@@ -1,0 +1,54 @@
+@media (min-width: 600px) {
+  
+  /* GENERAL RULES */
+
+  /* COMMON RULES */
+  
+  #header,
+  #advantages,
+  #call-back,
+  #about,
+  #questions{
+    padding: 0 20px
+  }
+
+  /* HEADER */
+  
+  #header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .phone-number p,
+  .phone-time p{
+    padding: 0;
+    margin: 0;
+  }
+  
+  .phone-time {
+    display: block;
+    padding: 0;
+    margin: 0;
+    font-size: 0.66em;
+    font-weight: 100
+  }
+
+  /* MAIN OFFER */
+
+  /*  ADVANTAGES */
+
+  /* GALLERY */
+
+  /* CALL-BACK */
+
+  /* CLIENTS */
+
+  /* ABOUT */
+
+  /* QUESTIONS */
+
+  /* FOOTER */
+
+  
+}
