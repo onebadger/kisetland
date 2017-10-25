@@ -28,18 +28,21 @@ img {
   
   text-align: center;
   
-  max-width: 1000px; /* mobile size imitation */
-  margin: 0 auto;
+/*  max-width: 1000px;*/
+/*  margin: 0 auto;*/
   
   min-height: calc(100vh - 88px); /* sticky footer */
 }
 
 /* COMMON RULES */
 
+#gallery,
 #advantages,
 #call-back,
 #about,
 #questions {
+  max-width: 1000px;
+  margin: 0 auto;
   padding: 0 10px;
 }
 
@@ -125,7 +128,16 @@ img {
 #main-offer {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+/*  padding: 10px;*/
+/*  height: 600px;*/
+  background: linear-gradient(#fff, transparent 99%),
+/*    linear-gradient(#fff, transparent 20%),*/
+/*              linear-gradient(180deg, #fff, transparent),*/
+    url(../img/kiset-wallp2.jpg) no-repeat center  center fixed;
+  background-size: cover;
+  color: #000;
+  
+  
 }
 
 .video {
@@ -135,6 +147,12 @@ img {
 
 .offer-txt {
   text-transform: uppercase;
+}
+
+.order-txt {
+  text-transform: uppercase;
+  font-size: 1.3em;
+  padding: 0 8%
 }
 
 .order-form {
