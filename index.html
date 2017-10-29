@@ -2,46 +2,54 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta name="robots" content="noindex,nofollow">
     <title>Кисеты из кожи на заказ | Кожевенная мастерская | Дмитрий Ляш</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/forms.css">
     <link rel="stylesheet" type="text/css" href="css/responsive.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.js" integrity="sha256-tA8y0XqiwnpwmOIl3SGAcFl2RvxHjA8qp0+1uCGmRmg=" crossorigin="anonymous"></script>
+<!--    <script src="https://code.jquery.com/jquery-3.2.1.slim.js" integrity="sha256-tA8y0XqiwnpwmOIl3SGAcFl2RvxHjA8qp0+1uCGmRmg=" crossorigin="anonymous"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
     <div id="wrapper">
-      <div id="header">
-        <div class="logo">
-          <div class="logo-img"><img class="svg" src="img/logo1.svg"></div>
-          <div class="logo-txt"><p>КОЖЕВЕННАЯ МАСТЕРСКАЯ</p></div>
+      <div class="wrapper">
+        <div id="header">
+          <div class="logo">
+            <div class="logo-img"><img class="svg" src="img/logo1.svg"></div>
+            <div class="logo-txt"><p>КОЖЕВЕННАЯ МАСТЕРСКАЯ</p></div>
+          </div>
+          <div class="phone">
+            <div class="phone-number"><p><a href="tel:+79646421507">8(964)642-15-07</a></p><hr></div>
+            <div class="phone-time"><p>с 10 до 20 каждый день</p></div>
+          </div>
         </div>
-        <div class="phone">
-          <div class="phone-number"><p><a href="tel:+79646421507">8(964)642-15-07</a></p></div>
-          <div class="phone-time"><p>с 10 до 20 каждый день</p></div>
+        <div id="fixed-top">
+          <div id="fixed-top-wrapper">
+          <div id="fixed-top-img"><a href="#header"><img src="img/logo2.svg"></a></div>
+          <div id="fixed-phone"><p><a href="tel:+79646421507">8(964)642-15-07</a></p></div>
+          </div>
         </div>
       </div>
-      <div id="fixed-top">
-        <div id="fixed-top-img"><a href="#header"><img src="img/logo2.svg"></a></div>
-        <div><p><a href="tel:+79646421507">89646421507</a></p></div>
-      </div>
-      <div id="main-offer">
-        <div class="offer-txt"><h1>КОЖАНЫЕ КИСЕТЫ ТАКИЕ КЛАССНЫЕ И ТАКИЕ КОЖАНЫЕ СШИТЫЕ ВОТ ЭТИМИ ВОТ РУКАМИ</h1></div>
-        <div class="video"><img src="#"></div>
-        <div class="order">
-          <div class="order-txt"><p>заказать кисет с доставкой по москве бесплатно в подарочной упаковке. 100гр кубинского табака, ром и кастет в подарок</p></div>
-          <form class="form order-form">
-            <input type="text" placeholder="Ваше имя">
-            <input type="email" placeholder="Ваш e-mail">
-            <input type="tel" placeholder="Ваше телефон">
-            <button>ЗАКАЗАТЬ</button>
-          </form>
+      <div id="offer-wrapper">
+        <div id="main-offer">
+          <div class="offer-txt"><h1>ШОК! СЕНСАЦИЯ! КОЖАНЫЕ КИСЕТЫ! ТАКИЕ КЛАССНЫЕ И ТАКИЕ КОЖАНЫЕ! СШИТЫЕ ВОТ ЭТИМИ ВОТ РУКАМИ!</h1></div>
+          <div class="video"><img src="img/kiset-wallp2.jpg"></div>
+          <div class="order">
+            <div class="order-txt"><p>скачать без смс с доставкой по москве бесплатно в подарочной упаковке. 100гр кубанского табака, ром и кастет в подарок не является публичной офертой</p></div>
+            <form class="form order-form">
+              <input type="text" placeholder="Ваше имя">
+              <input type="email" placeholder="Ваш e-mail">
+              <input type="tel" placeholder="Ваш телефон">
+              <button>ЗАКАЗАТЬ</button>
+            </form>
+          </div>
         </div>
       </div>
 <!--      <div id="content-wrapper">-->
+      <div class="wrapper">
         <div id="advantages">
           <h2>КАК МЫ РАБОТАЕМ?</h2>
           <ul>
@@ -63,7 +71,7 @@
           <h2>ЗАКАЗАТЬ ОБРАТНЫЙ ЗВОНОК</h2>
           <form class="form call-back-form">
             <input type="text" placeholder="Ваше имя">
-            <input type="tel" placeholder="Ваше телефон">
+            <input type="tel" placeholder="Ваш телефон">
             <button>ПОЗВОНИТЕ МНЕ</button>
           </form>
         </div>
@@ -84,10 +92,12 @@
           <h2>ОСТАЛИСЬ ВОПРОСЫ?</h2>
           <form class="form questions-form">
             <input type="text" placeholder="Ваше имя">
-            <input type="email" placeholder="Ваше e-mail">
+            <input type="email" placeholder="Ваш e-mail">
             <button>ЗАДАТЬ ВОПРОС</button>
           </form>
         </div>
+      </div>
+      <div class="js-media"></div> <!-- javascript mediaqueri breakpoint -->
 <!--      </div>-->
     </div>
     <footer>
