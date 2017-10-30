@@ -243,14 +243,8 @@ img {
   position: relative;
 }
 
-#gallery-arr-left {
-  top: calc(50% - 35px);
-  left: 2%;
-}
-
-#gallery-arr-right {
-  top: calc(50% - 35px);
-  right: 2%;
+.gallery-box{
+  position: relative;
 }
 
 #gallery-img {
@@ -267,6 +261,19 @@ img {
   background-color: rgba(0,0,0,.5);
   color: #fff;
 }
+
+#gallery-arr-left {
+  top: calc(50% - 35px);
+  left: 2%;
+  z-index: 100
+}
+
+#gallery-arr-right {
+  top: calc(50% - 35px);
+  right: 2%;
+  z-index: 100
+}
+
 
 
 /* CALL-BACK */

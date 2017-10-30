@@ -83,6 +83,20 @@
   }
 
   /* GALLERY */
+  
+  #gallery-img {
+    display: flex;
+    flex-wrap: wrap;
+    
+    margin: 0 70px
+  }
+  
+  .gallery-box {
+    flex-basis: 46%;
+    margin: 2%
+    
+/*    padding: 10px*/
+  }
 
   /* CALL-BACK */
 
@@ -182,6 +196,14 @@
   
   #advantages li:not(:last-child) {
     padding-bottom: 20px;
+  }
+  
+   
+  
+  .gallery-box {
+    flex-basis: 31.33%;
+    
+    margin: 1%
   }
   
 }
