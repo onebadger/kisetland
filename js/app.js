@@ -39,112 +39,73 @@ var $galleryImg = $('#gallery-img');
 var galleryHtml = '';
 var galleryCurrentIndex = 0;
 var galleryLastIndex = kisetList.length - 1;
-var $breakPoint = $('.js-media');
+var $breakPointHolder = $('.js-media').css('display');
 
-function galleryHtmlConstructor () {
+function galleryHtmlConstructor (number) {
   
-  if ($breakPoint.css('display') === 'none') {
-    
-    galleryHtml += '<div class="gallery-box"><img class="gallery-img" src="';
-    galleryHtml += kisetList[galleryCurrentIndex].image;
-    galleryHtml += '"><p id="gallery-text" class="gallery-text">';
-    galleryHtml += kisetList[galleryCurrentIndex].info;
-    galleryHtml += '</p></div>';
-    
-    $galleryImg.empty().append(galleryHtml);
-  } else if ($breakPoint.css('display') === 'inline') {
-    
-    galleryHtml += '<div class="gallery-box"><img class="gallery-img" src="';
-    galleryHtml += kisetList[galleryCurrentIndex].image;
-    galleryHtml += '"><p id="gallery-text" class="gallery-text">';
-    galleryHtml += kisetList[galleryCurrentIndex].info;
-    galleryHtml += '</p></div>';
-    galleryHtml += '<div class="gallery-box"><img class="gallery-img" src="';
-    galleryHtml += kisetList[galleryCurrentIndex + 1].image;
-    galleryHtml += '"><p id="gallery-text" class="gallery-text">';
-    galleryHtml += kisetList[galleryCurrentIndex + 1].info;
-    galleryHtml += '</p></div>';
-    galleryHtml += '<div class="gallery-box"><img class="gallery-img" src="';
-    galleryHtml += kisetList[galleryCurrentIndex + 2].image;
-    galleryHtml += '"><p id="gallery-text" class="gallery-text">';
-    galleryHtml += kisetList[galleryCurrentIndex + 2].info;
-    galleryHtml += '</p></div>';
-    galleryHtml += '<div class="gallery-box"><img class="gallery-img" src="';
-    galleryHtml += kisetList[galleryCurrentIndex + 3].image;
-    galleryHtml += '"><p id="gallery-text" class="gallery-text">';
-    galleryHtml += kisetList[galleryCurrentIndex + 3].info;
-    galleryHtml += '</p></div>';
-
-    $galleryImg.empty().append(galleryHtml);
-  } else if ($breakPoint.css('display') === 'block') {
-    
-    galleryHtml += '<div class="gallery-box"><img class="gallery-img" src="';
-    galleryHtml += kisetList[galleryCurrentIndex].image;
-    galleryHtml += '"><p id="gallery-text" class="gallery-text">';
-    galleryHtml += kisetList[galleryCurrentIndex].info;
-    galleryHtml += '</p></div>';
-    galleryHtml += '<div class="gallery-box"><img class="gallery-img" src="';
-    galleryHtml += kisetList[galleryCurrentIndex + 1].image;
-    galleryHtml += '"><p id="gallery-text" class="gallery-text">';
-    galleryHtml += kisetList[galleryCurrentIndex + 1].info;
-    galleryHtml += '</p></div>';
-    galleryHtml += '<div class="gallery-box"><img class="gallery-img" src="';
-    galleryHtml += kisetList[galleryCurrentIndex + 2].image;
-    galleryHtml += '"><p id="gallery-text" class="gallery-text">';
-    galleryHtml += kisetList[galleryCurrentIndex + 2].info;
-    galleryHtml += '</p></div>';
-    galleryHtml += '<div class="gallery-box"><img class="gallery-img" src="';
-    galleryHtml += kisetList[galleryCurrentIndex + 3].image;
-    galleryHtml += '"><p id="gallery-text" class="gallery-text">';
-    galleryHtml += kisetList[galleryCurrentIndex + 3].info;
-    galleryHtml += '</p></div>';
-    galleryHtml += '<div class="gallery-box"><img class="gallery-img" src="';
-    galleryHtml += kisetList[galleryCurrentIndex + 4].image;
-    galleryHtml += '"><p id="gallery-text" class="gallery-text">';
-    galleryHtml += kisetList[galleryCurrentIndex + 4].info;
-    galleryHtml += '</p></div>';
-    galleryHtml += '<div class="gallery-box"><img class="gallery-img" src="';
-    galleryHtml += kisetList[galleryCurrentIndex + 5].image;
-    galleryHtml += '"><p id="gallery-text" class="gallery-text">';
-    galleryHtml += kisetList[galleryCurrentIndex + 5].info;
-    galleryHtml += '</p></div>'; 
-    
-    $galleryImg.empty().append(galleryHtml);
-  }
+  galleryHtml='';   
+  for ( var i= 0 ; i < number ; i++ ) {
+    galleryHtml += '<div class="gallery-box"><img class="gallery-img" src="' + kisetList[i].image + '"><p id="gallery-text" class="gallery-text">' + kisetList[galleryCurrentIndex].info + '</p></div>';
+  };
+  
 }
 
-
-
-galleryHtmlConstructor ();
-
-
-
-
-function kisetListClick () {
+function galleryListConstructor () {
   
-  $('#gallery-arr-right').click(function(event) {
-    event.preventDefault();
-    if (galleryCurrentIndex === galleryLastIndex) {
-      galleryCurrentIndex = 0;
-      galleryListLoader();
-    } else {
-      galleryCurrentIndex += 1;
-      galleryListLoader();
-    }
-  });
-
-  $('#gallery-arr-left').click(function(event) {
-    event.preventDefault();
-    if (galleryCurrentIndex === 0) {
-      galleryCurrentIndex = galleryLastIndex;
-      galleryListLoader();
-    } else {
-      galleryCurrentIndex -= 1;
-      galleryListLoader();
-    }
-  });
+  $galleryImg.empty();
+  $breakPointHolder = $('.js-media').css('display');
+  if ($breakPointHolder === 'none') {
+    galleryHtmlConstructor(1);
+    $galleryImg.append(galleryHtml);
+  } else if ($breakPointHolder === 'inline') {
+    galleryHtmlConstructor(4);
+    $galleryImg.append(galleryHtml);
+  } else if ($breakPointHolder === 'block') {
+    galleryHtmlConstructor(6);
+    $galleryImg.append(galleryHtml);
+  };
+  
 }
-kisetListClick();
+
+galleryListConstructor ();
+
+$(window).ready( function() {
+  $(window).on('resize', function () {
+    if ($breakPointHolder === $('.js-media').css('display')) {
+      return;
+    } else {
+      galleryListConstructor();
+    }
+  });
+});
+
+
+
+//function kisetListClick () {
+//  
+//  $('#gallery-arr-right').click(function(event) {
+//    event.preventDefault();
+//    if (galleryCurrentIndex === galleryLastIndex) {
+//      galleryCurrentIndex = 0;
+//      galleryListLoader();
+//    } else {
+//      galleryCurrentIndex += 1;
+//      galleryListLoader();
+//    }
+//  });
+//
+//  $('#gallery-arr-left').click(function(event) {
+//    event.preventDefault();
+//    if (galleryCurrentIndex === 0) {
+//      galleryCurrentIndex = galleryLastIndex;
+//      galleryListLoader();
+//    } else {
+//      galleryCurrentIndex -= 1;
+//      galleryListLoader();
+//    }
+//  });
+//}
+//kisetListClick();
 
 
 
