@@ -45,7 +45,7 @@ function galleryHtmlConstructor (number) {
   
   galleryHtml='';   
   for ( var i= 0 ; i < number ; i++ ) {
-    galleryHtml += '<div class="gallery-box"><img class="gallery-img" src="' + kisetList[i].image + '"><p id="gallery-text" class="gallery-text">' + kisetList[galleryCurrentIndex].info + '</p></div>';
+    galleryHtml += '<div class="gallery-box"><img class="gallery-img" src="' + kisetList[i].image + '"><p id="gallery-text" class="gallery-text">' + kisetList[i].info + '</p></div>';
   };
   
 }
@@ -108,8 +108,56 @@ $(window).ready( function() {
 //kisetListClick();
 
 
+var $clientsImg = $('#clients-img');
+var clientsHtml = '';
+var clientsCurrentIndex = 0;
+var clientsLastIndex = clientsList.length - 1;
+var $breakPointHolder2 = $('.js-media').css('display');
 
 
+function clientsHtmlConstructor (number) {
+  
+  clientsHtml='';   
+  for ( var i= 0 ; i < number ; i++ ) {
+    clientsHtml += '<div class="clients-box"><img class="gallery-img" src="' + clientsList[i].image + '"><div class="clients-text"><p>"' + clientsList[i].info + '" <strong>' + clientsList[i].name + '</strong></p></div></div>';
+  };
+  
+}
+
+
+
+function clientsListConstructor () {
+  
+  $clientsImg.empty();
+  $breakPointHolder2 = $('.js-media').css('display');
+  if ($breakPointHolder2 === 'none') {
+    clientsHtmlConstructor(1);
+    $clientsImg.append(clientsHtml);
+  } else if ($breakPointHolder2 === 'inline') {
+    clientsHtmlConstructor(2);
+    $clientsImg.append(clientsHtml);
+  } else if ($breakPointHolder2 === 'block') {
+    clientsHtmlConstructor(3);
+    $clientsImg.append(clientsHtml);
+  };
+  
+}
+
+
+
+clientsListConstructor();
+
+
+$(window).ready( function() {
+  $(window).on('resize', function () {
+    if ($breakPointHolder2 === $('.js-media').css('display')) {
+      return;
+    } else {
+
+      clientsListConstructor();
+    }
+  });
+});
 
 
 

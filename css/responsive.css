@@ -101,6 +101,22 @@
   /* CALL-BACK */
 
   /* CLIENTS */
+  
+  #clients-img {
+  display: flex;
+    max-width: 580px;
+}
+  
+  .clients-box:not(:first-child) {
+  padding-top: 0;
+}
+  .clients-box:first-child {
+  }
+  
+  .clients-box {
+    padding: 0 15px
+  }
+  
 
   /* ABOUT */
 
@@ -204,6 +220,15 @@
     flex-basis: 31.33%;
     
     margin: 1%
+  }
+  
+    #clients-img {
+    max-width: 870px;
+}
+  
+  
+  .clients-box {
+    padding: 0 25px
   }
   
 }
