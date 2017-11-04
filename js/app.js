@@ -37,15 +37,15 @@ $(document).ready(function(){
 
 var $galleryImg = $('#gallery-img');
 var galleryHtml = '';
-var galleryCurrentIndex = 0;
-var galleryLastIndex = kisetList.length - 1;
+var kisetCurrentIndex = 0;
+var kisetLastIndex = kisetList.length - 1;
 var $breakPointHolder = $('.js-media').css('display');
 
 function galleryHtmlConstructor (number) {
   
   galleryHtml='';   
   for ( var i= 0 ; i < number ; i++ ) {
-    galleryHtml += '<div class="gallery-box"><img class="gallery-img" src="' + kisetList[i].image + '"><p id="gallery-text" class="gallery-text">' + kisetList[i].info + '</p></div>';
+    galleryHtml += '<div class="gallery-box"><img class="gallery-img" src="' + kisetList[i].image + '"><p class="gallery-text">' + kisetList[i].info + '</p></div>';
   };
   
 }
@@ -79,33 +79,48 @@ $(window).ready( function() {
   });
 });
 
+//              <div class="gallery-box">
+//                <img class="gallery-img" src="img/kiset01.png">
+//                <p class="gallery-text">описание кисета. ну что тут сказать, он хорош!</p>
+//              </div>
+//              <div class="gallery-box">
+//                <img class="gallery-img" src="img/kiset01.png">
+//                <p class="gallery-text">описание кисета. ну что тут сказать, он хорош!</p>
+//              </div>
 
 
-//function kisetListClick () {
-//  
-//  $('#gallery-arr-right').click(function(event) {
-//    event.preventDefault();
-//    if (galleryCurrentIndex === galleryLastIndex) {
-//      galleryCurrentIndex = 0;
-//      galleryListLoader();
-//    } else {
-//      galleryCurrentIndex += 1;
-//      galleryListLoader();
-//    }
-//  });
-//
-//  $('#gallery-arr-left').click(function(event) {
-//    event.preventDefault();
-//    if (galleryCurrentIndex === 0) {
-//      galleryCurrentIndex = galleryLastIndex;
-//      galleryListLoader();
-//    } else {
-//      galleryCurrentIndex -= 1;
-//      galleryListLoader();
-//    }
-//  });
-//}
-//kisetListClick();
+function kisetImgLoader () {
+  $('.gallery-img').attr('src', kisetList[kisetCurrentIndex].image);
+  $('.gallery-text').text(kisetList[kisetCurrentIndex].info);
+};
+
+
+
+function kisetListClick () {
+  
+  $('#gallery-arr-right').click(function(event) {
+    event.preventDefault();
+    if (kisetCurrentIndex === kisetLastIndex) {
+      kisetCurrentIndex = 0;
+      kisetImgLoader();
+    } else {
+      kisetCurrentIndex += 1;
+      kisetImgLoader();
+    }
+  });
+
+  $('#gallery-arr-left').click(function(event) {
+    event.preventDefault();
+    if (kisetCurrentIndex === 0) {
+      kisetCurrentIndex = kisetLastIndex;
+      kisetImgLoader();
+    } else {
+      kisetCurrentIndex -= 1;
+      kisetImgLoader();
+    }
+  });
+}
+kisetListClick();
 
 
 var $clientsImg = $('#clients-img');
@@ -159,6 +174,8 @@ $(window).ready( function() {
   });
 });
 
+
+              
 
 
 

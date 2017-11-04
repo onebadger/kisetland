@@ -251,7 +251,7 @@ img {
   display: block
 }
 
-#gallery-text {
+.gallery-text {
   position: absolute;
   bottom: 0;
   width: 100%;
