@@ -150,7 +150,7 @@ img {
   display: none; /* none/flex on js script */
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 20;
   padding: 0 10px;
   position: fixed;
   width: 100%;
@@ -265,13 +265,13 @@ img {
 #gallery-arr-left {
   top: calc(50% - 35px);
   left: 2%;
-  z-index: 100
+  z-index: 10
 }
 
 #gallery-arr-right {
   top: calc(50% - 35px);
   right: 2%;
-  z-index: 100
+  z-index: 10
 }
 
 
@@ -323,9 +323,9 @@ img {
 }
 
 
-.clients-text {
+.clients-text-box {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   
   border-radius: 10px;
 
@@ -336,8 +336,15 @@ img {
   color: #fff;
 }
 
-.clients-text p {
-  align-self: center;
+.clients-text {
+  margin: 0;
+  padding-bottom: 10px;
+
+}
+
+.clients-name {
+  margin: 0;
+
 }
 
 
@@ -356,13 +363,58 @@ img {
 
 footer {
   text-align: center;
+  background: linear-gradient(rgba(0,0,0, .05), rgba(0,0,0, .2) 100%);
+  
+}
 
+.social img {
+  width: 35px;
+}
+
+.social a {
+  display: inline-block;
+  padding: 20px 5px 0;
+}
+
+.social div:not(:first-child) {
+/*  padding-left: 10px*/
+}
+
+.contacts {
+  padding-top: 10px;
+  font-size: 1.0em;
+}
+
+.contacts ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.developer {
+  margin-bottom: 0;
+  padding: 5px 0 15px;
+}
+
+.developer a {
+  color: #336699;
 }
 
 
 
+.thanks {
+  text-align: center;
+  margin-top: 10%;
+  padding: 0 5%;
+}
 
+.thanks-back {
+  text-align: center;
+  padding: 20px 5% 0;
+}
 
+.thanks-back a {
+  text-decoration: underline;
+}
 
 
 

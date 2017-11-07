@@ -88,7 +88,7 @@
     display: flex;
     flex-wrap: wrap;
     
-    margin: 0 70px
+/*    margin: 0 70px*/
   }
   
   .gallery-box {
@@ -123,6 +123,11 @@
   /* QUESTIONS */
 
   /* FOOTER */
+  
+  .contacts {
+/*  padding-top: 10px;*/
+  font-size: 1.1em;
+}
 
   
 }
@@ -230,5 +235,10 @@
   .clients-box {
     padding: 0 25px
   }
+  
+   .contacts {
+/*  padding-top: 10px;*/
+  font-size: 1.2em;
+}
   
 }

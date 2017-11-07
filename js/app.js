@@ -55,12 +55,11 @@ function galleryListConstructor () {
   $galleryImg.empty();
   $breakPointHolder = $('.js-media').css('display');
   if ($breakPointHolder === 'none') {
+    $('#gallery-arr-left').add('#gallery-arr-right').show();
     galleryHtmlConstructor(1);
     $galleryImg.append(galleryHtml);
-  } else if ($breakPointHolder === 'inline') {
-    galleryHtmlConstructor(4);
-    $galleryImg.append(galleryHtml);
-  } else if ($breakPointHolder === 'block') {
+  } else {
+    $('#gallery-arr-left').add('#gallery-arr-right').hide();
     galleryHtmlConstructor(6);
     $galleryImg.append(galleryHtml);
   };
@@ -79,19 +78,20 @@ $(window).ready( function() {
   });
 });
 
-//              <div class="gallery-box">
-//                <img class="gallery-img" src="img/kiset01.png">
-//                <p class="gallery-text">описание кисета. ну что тут сказать, он хорош!</p>
-//              </div>
-//              <div class="gallery-box">
-//                <img class="gallery-img" src="img/kiset01.png">
-//                <p class="gallery-text">описание кисета. ну что тут сказать, он хорош!</p>
-//              </div>
+
 
 
 function kisetImgLoader () {
   $('.gallery-img').attr('src', kisetList[kisetCurrentIndex].image);
   $('.gallery-text').text(kisetList[kisetCurrentIndex].info);
+//  $('#gallery-img').children('div').each(function () {
+//  
+//  
+//  for ( var i; i < kisetList.length; i++ ) {
+//    $('.gallery-img').attr('src', kisetList[i].image);
+//  $('.gallery-text').text(kisetList[i].info);
+//  }
+//});
 };
 
 
@@ -123,21 +123,28 @@ function kisetListClick () {
 kisetListClick();
 
 
+
+
+
+
+
+
 var $clientsImg = $('#clients-img');
 var clientsHtml = '';
 var clientsCurrentIndex = 0;
 var clientsLastIndex = clientsList.length - 1;
 var $breakPointHolder2 = $('.js-media').css('display');
 
-
 function clientsHtmlConstructor (number) {
   
   clientsHtml='';   
   for ( var i= 0 ; i < number ; i++ ) {
-    clientsHtml += '<div class="clients-box"><img class="gallery-img" src="' + clientsList[i].image + '"><div class="clients-text"><p>"' + clientsList[i].info + '" <strong>' + clientsList[i].name + '</strong></p></div></div>';
+    clientsHtml += '<div class="clients-box"><img class="clients-img" src="' + clientsList[i].image + '"><div class="clients-text-box"><p class="clients-text">' + clientsList[i].info + '</p><p class="clients-name">' + clientsList[i].name + '</p></div></div>';
   };
   
 }
+
+//<div class="clients-box"><img class="clients-img" src="img/client01.png"><div class="clients-text-box"><p class="clients-text">some text some text some text some text some text</p><p class="clients-name">name name name name</p></div></div>
 
 
 
@@ -146,19 +153,20 @@ function clientsListConstructor () {
   $clientsImg.empty();
   $breakPointHolder2 = $('.js-media').css('display');
   if ($breakPointHolder2 === 'none') {
+    $('#clients-arr-left').add('#clients-arr-right').show();
     clientsHtmlConstructor(1);
     $clientsImg.append(clientsHtml);
   } else if ($breakPointHolder2 === 'inline') {
+    $('#clients-arr-left').add('#clients-arr-right').hide();
     clientsHtmlConstructor(2);
     $clientsImg.append(clientsHtml);
   } else if ($breakPointHolder2 === 'block') {
+    $('#clients-arr-left').add('#clients-arr-right').hide();
     clientsHtmlConstructor(3);
     $clientsImg.append(clientsHtml);
   };
   
 }
-
-
 
 clientsListConstructor();
 
@@ -175,7 +183,44 @@ $(window).ready( function() {
 });
 
 
-              
+function clientsImgLoader () {
+  $('.clients-img').attr('src', clientsList[clientsCurrentIndex].image);
+  $('.clients-text p').text(clientsList[clientsCurrentIndex].info);
+  $('.clients-name').text(clientsList[clientsCurrentIndex].name);
+  
+
+}
+
+
+function clientsListClick () {
+  
+  $('#clients-arr-right').click(function(event) {
+    event.preventDefault();
+    if (clientsCurrentIndex === clientsLastIndex) {
+      clientsCurrentIndex = 0;
+      clientsImgLoader();
+    } else {
+      clientsCurrentIndex += 1;
+      clientsImgLoader();
+    }
+  });
+
+  $('#clients-arr-left').click(function(event) {
+    event.preventDefault();
+    if (clientsCurrentIndex === 0) {
+      clientsCurrentIndex = clientsLastIndex;
+      clientsImgLoader();
+    } else {
+      clientsCurrentIndex -= 1;
+      clientsImgLoader();
+    }
+  });
+}
+clientsListClick();
+
+
+
+
 
 
 
