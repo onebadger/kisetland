@@ -42,7 +42,7 @@
             <form class="form order-form" action="php/form1.php" method="post">
               <input type="text" placeholder="Ваше имя" name="user_name1">
               <input type="email" placeholder="Ваш e-mail" name="user_mail1">
-              <input type="tel" placeholder="Ваш телефон*" name="user_tel1">
+              <input type="tel" placeholder="Ваш телефон*" name="user_tel1" required>
               <button>ЗАКАЗАТЬ</button>
             </form>
           </div>
@@ -82,7 +82,7 @@
           <h2>ЗАКАЗАТЬ ОБРАТНЫЙ ЗВОНОК</h2>
           <form class="form call-back-form" action="php/form2.php" method="post">
               <input type="text" placeholder="Ваше имя" name="user_name2">
-              <input type="tel" placeholder="Ваш телефон*" name="user_tel2">
+              <input type="tel" placeholder="Ваш телефон*" name="user_tel2" required>
             <button>ПОЗВОНИТЕ МНЕ</button>
           </form>
         </div>
@@ -116,7 +116,7 @@
         <div id="questions">
           <h2>ОСТАЛИСЬ ВОПРОСЫ?</h2>
           <form class="form questions-form" action="php/form3.php" method="post">
-            <input type="email" placeholder="Ваш e-mail*" name="user_mail3">
+            <input type="email" placeholder="Ваш e-mail*" name="user_mail3" required>
             <textarea placeholder="Тут можно написать что-то. Попробуйте!)" name="user_bio3"></textarea>
             <button>ЗАДАТЬ ВОПРОС</button>
           </form>

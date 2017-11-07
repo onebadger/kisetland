@@ -4,7 +4,7 @@ if(isset($_POST['user_tel1'])) {
   $message = 'Name: ' .$_POST['user_name1'] . "\n"
     .'Phone: ' .$_POST['user_tel1'] . "\n"
     .'Email: ' .$_POST['user_mail1'];
-  mail('yakov.barsukov@gmail.com', 'KisetLand main offer', $message);
+  mail('yakov.barsukov@gmail.com, lyashdm@gmail.com', 'KisetLand main offer', $message);
 } else {
   header('Refresh: 3; URL=../index.html');
   exit(0);

@@ -3,7 +3,7 @@
 if(isset($_POST['user_mail3'])) {
   $message = 'Email: ' .$_POST['user_mail3'] . "\n"
     .'Question: ' .$_POST['user_bio3'];
-  mail('yakov.barsukov@gmail.com', 'KisetLand Question', $message);
+  mail('yakov.barsukov@gmail.com, lyashdm@gmail.com', 'KisetLand Question', $message);
 } else {
   header('Refresh: 3; URL=../index.html');
   exit(0);
