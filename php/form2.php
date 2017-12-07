@@ -13,17 +13,15 @@ if(isset($_POST['user_tel2'])) {
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="refresh" content="15; url=../index.html">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-    <meta name="robots" content="noindex,nofollow">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="refresh" content="15; url=../index.html" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
     <title>Кисеты из кожи на заказ | Кожевенная мастерская | Дмитрий Ляш</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&amp;subset=cyrillic" rel="stylesheet">  
-    <link rel="stylesheet" type="text/css" href="../css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="../css/main.css">
-    <link rel="stylesheet" type="text/css" href="../css/forms.css">
-    <link rel="stylesheet" type="text/css" href="../css/responsive.css">
-<!--    <script src="https://code.jquery.com/jquery-3.2.1.slim.js" integrity="sha256-tA8y0XqiwnpwmOIl3SGAcFl2RvxHjA8qp0+1uCGmRmg=" crossorigin="anonymous"></script>-->
+    <link rel="stylesheet" type="text/css" href="../css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../css/responsive.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
@@ -46,8 +44,33 @@ if(isset($_POST['user_tel2'])) {
           </div>
         </div>
       </div>
-      <div class="thanks"><h1>Спасибо. Мы скоро свяжемся с Вами! Ага, жди.</h1></div>
+      <div class="thanks"><h1>Спасибо. Мы скоро свяжемся с Вами!</h1></div>
       <div class="thanks-back"><p>Вернуться на <a href="../index.html">главную</a> страницу.</p></div>
     </div>
+    <footer><hr>
+      <div class="social">
+        <a href="#" target="_blank">
+          <img src="../img/ico-vk.svg">
+        </a>
+        <a href="#" target="_blank">
+          <img src="../img/ico-fb.svg">
+        </a>
+        <a href="#" target="_blank">
+          <img src="../img/ico-instagram2.svg">
+        </a>
+      </div><!-- /#.social -->
+      <div class="contacts">
+         <ul>
+          <li><a href="tel:+79646421507"><strong>8(964)642-15-07</strong></a></li>
+          <li><a href="mailto:lyashdm@gmail.com" target="_blank"><strong>lyashdm@gmail.com</strong></a></li>
+          <li>Москва, Электрозаводская ул., 21</li>
+          <li>10:00 - 20:00 каждый день</li>
+        </ul>
+      </div><!-- /#.contacts -->
+      <div class="copyright">
+        <p>&copy; 2017. Дмитрий Ляш. Копирование и публикация материалов со сылкой на kisetland.ru</p>
+      </div>
+      <p class="developer">дизайн и разработка&ensp;<a href="mailto:yakov.barsukov@gmail.com" target="_blank">onebadger</a></p>
+    </footer>
   </body>
 </html>

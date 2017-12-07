@@ -1,3 +1,5 @@
+$(".phone-mask").mask("(999) 999-9999");
+
 // show and fix hiden top on scroll down more then Xpx
 
 $(window).bind('scroll', function () {

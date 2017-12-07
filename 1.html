@@ -1,20 +1,7 @@
-<?php 
-
-if(isset($_POST['user_mail3'])) {
-  $message = 'Email: ' .$_POST['user_mail3'] . "\n"
-    .'Question: ' .$_POST['user_bio3'];
-  mail('yakov.barsukov@gmail.com, lyashdm@gmail.com', 'KisetLand Question', $message);
-} else {
-  header('Refresh: 3; URL=../index.html');
-  exit(0);
-}
-?>
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta http-equiv="refresh" content="15; url=../index.html" />
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
     <meta name="robots" content="noindex,nofollow" />
     <title>Кисеты из кожи на заказ | Кожевенная мастерская | Дмитрий Ляш</title>
@@ -22,7 +9,6 @@ if(isset($_POST['user_mail3'])) {
     <link rel="stylesheet" type="text/css" href="../css/normalize.css" />
     <link rel="stylesheet" type="text/css" href="../css/main.css" />
     <link rel="stylesheet" type="text/css" href="../css/responsive.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </head>
   <body>
     <div id="wrapper">
@@ -50,13 +36,13 @@ if(isset($_POST['user_mail3'])) {
     <footer><hr>
       <div class="social">
         <a href="#" target="_blank">
-          <img src="../img/ico-vk.svg">
+          <img src="img/ico-vk.svg">
         </a>
         <a href="#" target="_blank">
-          <img src="../img/ico-fb.svg">
+          <img src="img/ico-fb.svg">
         </a>
         <a href="#" target="_blank">
-          <img src="../img/ico-instagram2.svg">
+          <img src="img/ico-instagram2.svg">
         </a>
       </div><!-- /#.social -->
       <div class="contacts">
